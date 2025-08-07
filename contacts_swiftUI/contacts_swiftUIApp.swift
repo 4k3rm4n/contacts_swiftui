@@ -11,7 +11,7 @@ import SwiftUI
 struct contacts_swiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePageView<HomePageViewModelImpl>()
+            HomePageView(viewModel: HomePageViewModelImpl())
         }
     }
 }

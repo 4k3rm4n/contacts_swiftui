@@ -16,7 +16,7 @@ protocol HomePageViewModel: ObservableObject {
 
 struct HomePageView<ViewModel>: View where ViewModel: HomePageViewModel {
     @State var isShowingSheet: Bool = false
-    @ObservedObject var viewModel = HomePageViewModelImpl()
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
         NavigationStack {
             contentView
@@ -49,5 +49,5 @@ struct HomePageView<ViewModel>: View where ViewModel: HomePageViewModel {
 }
 
 #Preview {
-    HomePageView<HomePageViewModelImpl>()
+    HomePageView(viewModel: HomePageViewModelImpl())
 }
